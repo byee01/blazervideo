@@ -13,9 +13,7 @@
     // add a listener function to the ended event
     function myAddListener(){
       var myVideo = document.getElementById('player');
-      if (myVideo.src == 'video01.mp4') {
-        myVideo.addEventListener('ended', myNewSrc, false);
-      }
+      myVideo.addEventListener('ended', myNewSrc, false);
     }
   </script>
 </head>
