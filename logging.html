@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Logging Test</title>
+  <script type="text/javascript">
+    var events = [
+        'loadstart',
+        'progress',
+        'suspend',
+        'abort',
+        'error',
+        'emptied',
+        'stalled',
+        'loadedmetadata',
+        'loadeddata',
+        'canplay',
+        'canplaythrough',
+        'playing',
+        'waiting',
+        'seeking',
+        'seeked',
+        'ended',
+        'durationchange',
+        'timeupdate',
+        'play',
+        'pause',
+        'ratechange',
+        'resize',
+        'volumechange'
+    ];
+ 
+    function logEvent(e) {
+      var eventlog = document.getElementById('eventlog');
+      var newEntry = document.createElement('li');
+      newEntry.innerHTML = 'Logged ' + e.type + ' at ' + e.timeStamp;
+      eventlog.appendChild(newEntry);
+      window.console.log(newEntry);
+    }
+
+    // add a listener function to all events
+    function addEventListeners(){
+      var myVideo = document.getElementById('player');
+      for (var i = 0; i < events.length; i++) {
+        myVideo.addEventListener(events[i], logEvent, false);
+      }
+    }
+  </script>
+</head>
+<body onload="addEventListeners()">
+  <h1>HTML5 Video Test - Sequential Playback</h1>
+  <video id="player" src="video01.mp4" controls preload="none"></video>
+  <ul id="eventlog">
+  </ul>
+</body>
+</html>

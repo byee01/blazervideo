@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Video Test</title>
+  <script type="text/javascript">
+    // Modified sample code from https://developer.apple.com/library/safari/documentation/audiovideo/conceptual/using_html5_audio_video/controllingmediawithjavascript/controllingmediawithjavascript.html
+    function myNewSrc() {
+        var myVideo = document.getElementById('player');
+        myVideo.src = "video02.mp4";
+        myVideo.load();
+        myVideo.play();
+    }
+    // add a listener function to the ended event
+    function myAddListener(){
+        var myVideo = document.getElementById('player');
+        myVideo.addEventListener('ended', myNewSrc, false);
+    }
+  </script>
+</head>
+<body onload="myAddListener()">
+  <h1>HTML5 Video Test - Sequential Playback</h1>
+  <video id="player" src="video01.mp4" controls preload="none"></video>
+</body>
+</html>
