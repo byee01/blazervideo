@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Video Test</title>
+  <script type="text/javascript">
+    function playMe(){
+      var myVideo = document.getElementById('player');
+      myVideo.webkitEnterFullScreen();
+      myVideo.webkitEnterFullScreen();
+      myVideo.load();
+      myVideo.play();
+    }
+  </script>
+</head>
+<body>
+  <h1>HTML5 Video Test - Bug Test with 2 enterFullScreens()</h1>
+  <button onclick="playMe()">Play me</button>
+  <video id="player" src="video01.mp4" controls preload="none"></video>
+</body>
+</html>
